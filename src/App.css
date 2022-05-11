@@ -1,38 +1,260 @@
-.App {
-  text-align: center;
+:root {
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  text-transform: lowercase;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#videos {
+  background-color: orangered;
+  min-height: 30vh;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+#messaging {
+  background-color: orangered;
+  min-height: 30vh;
+  /* display: flex; */
+  /* display: none; */
+  /* flex-direction: column;
+  justify-content: s;
+  align-items: stretch; */
+  padding: 2rem;
+}
+
+#chat {
+  background-color: orange;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+}
+
+video {
+  max-width: 100%;
+  height: 120px;
+}
+
+#branding {
+  background-color: red;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  height: 8vh;
+  padding: 2rem 2rem 0 2rem;
+}
+
+#footer {
+  background-color: red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10vh;
+  padding: 2rem;
+}
+
+#login {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+#userNameForm {
+  width: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#userNameInputField {
+  width: 80%;
+  padding: .5rem;
+}
+#userNameSubmit {
+  width: 20%;
+  padding: .5rem;
+}
+
+#commune {
+  min-height: 88vh;
+}
+
+#mySection {
+  padding: 0 2rem 2rem 2rem;
+  background: red;
+  /* display: none; */
+}
+
+#online {
+  background: orange;
+  min-height: 100px;
+  padding: 2rem;
+  /* display: none; */
+}
+
+.other {
+  padding: 2rem;
+  background-color: rgba(0,0,0, .25);
+  margin: 0 0 1rem 0;
+}
+
+.me {
+  padding: 2rem;
+  background-color: rgba(255,255,255, .25);
+}
+
+h1 {
+  font-size: 3rem;
+  color: orange;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: .75rem;
+}
+#chat-main {
+  height: 100%;
+  /* border: 1px dotted black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chat-main-messages {
+  height: 100%;
+  min-height: 20vh;
+  background-color: rgba(255,255,255,.25);
+  padding: 1rem;
+}
+
+.chat-message {
+  background: rgba(255,255,255,.2);
+  border: 1px dashed black;
+  padding: .5rem;
+  margin: 0 0 .5rem 0;
+}
+
+#chat-input {
+
+}
+
+#chat-form {
+  margin: .5rem 0 0 0;
+
+}
+
+#chat-form-field {
+  width: calc(100% - 200px);   
+}
+
+#chat-form-button {
+  width: 200px;
+}
+
+/*  messaging */
+
+#messaging-main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: .5rem 0 0 0;
+  /* background: red; */
+}
+
+#messaging-targets {
+  width: 15%;
+  min-height: 100%;
+  background: rgba(255,255,255,.25);
+  padding: 1rem;
+}
+
+#currentUsers {
+  height: 100%;
+}
+
+#messaging h3 {
+  margin: 0 0 .5rem 0;
+}
+
+#target-history {
+  background: rgba(255,255,255,.25);
+  padding: 1rem;
+  width: calc(85% - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#targetDM-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+#targetDM-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 1rem;
+  background: rgba(255,255,255,.2);
+}
+
+#messager {
+  width: 100%;
+  /* background: rgba(0,0,0,.25); */
+  margin: 10px 0 0 0;
+}
+
+#dm-form-field {
+  width: 80%;
+}
+
+#dm-form-button {
+  width: 20%;
+}
+
+.message {
+  /* background: rgba(0,0,0,.25); */
+  border: 1px dashed black;
+  padding: 1rem;
+}
+
+.message-text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.message-deets {
+  font-style: italic;
+  font-size: .8rem;
+}
+
+.message-partner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
