@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #videos {
-  background-color: orangered;
+  background-color: red;
   min-height: 30vh;
   display: flex;
   /* display: none; */
@@ -49,7 +49,7 @@ video {
 }
 
 #branding {
-  background-color: red;
+  background-color: crimson;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -94,7 +94,7 @@ video {
 
 #mySection {
   padding: 0 2rem 2rem 2rem;
-  background: red;
+  background: crimson;
   /* display: none; */
 }
 
