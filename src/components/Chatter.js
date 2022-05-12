@@ -20,7 +20,7 @@ function Chatter({prepareChatMessage, me}){
         <div id="chat-input">
             <form id="chat-form" onSubmit={handleSubmit}>
                 <input type="text" id="chat-form-field" onChange={handleChange} value={messageText}/>
-                <input type="submit" id="chat-form-button" value="send message" />
+                <input type="submit" id="chat-form-button" value="send" />
             </form>
         </div>
     );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Peer from 'peerjs';
 import MySection from './MySection';
-import UsersOnline from './UsersOnline';
 import Chat from './Chat';
 import Messaging from './Messaging';
 import Videos from './Videos';
@@ -18,14 +17,17 @@ function Commune({room, roomCreator, userName}){
         const videoCorral = document.querySelector('#video-corral');
         let newUserVideo = document.createElement('video');
         let newUser = document.createElement('div');
-
-        let newUserName = document.createElement('p');
+        let newUserName = document.createElement('h3');
+        let videoFrame = document.createElement('div');
+        videoFrame.className = 'video-frame';
         newUserName.textContent = `${user.userName}`;
         newUser.id = `remote-user-${user.userID}`;
+        newUser.className = 'user-video';
         newUserVideo.id = `remote-video-${user.userID}`;
         newUserVideo.srcObject = remoteStream;
         newUserVideo.play();
-        newUser.appendChild(newUserVideo);
+        videoFrame.appendChild(newUserVideo);
+        newUser.appendChild(videoFrame);
         newUser.appendChild(newUserName);
         videoCorral.appendChild(newUser);
     }
@@ -36,7 +38,7 @@ function Commune({room, roomCreator, userName}){
         // remove orphaned video elements
         const corral = document.querySelector('#video-corral')
         for (let child of corral.children){
-            if (child.id = `remote-user-${id}`){
+            if (child.id === `remote-user-${id}`){
                 child.remove();
             }
         }
@@ -173,11 +175,27 @@ function Commune({room, roomCreator, userName}){
 
     return (
         <div id="commune">
-            <MySection me={userObj} room={room} roomCreator={roomCreator}/>
+            <MySection 
+                me={userObj} 
+                room={room} 
+                roomCreator={roomCreator}
+            />
+            <Messaging 
+                ws={websocket}
+                me={userObj} 
+                currentUsers={currentUsers} 
+                dms={dms}
+                setDMs={setDMs}
+            />
             <Videos />
-            {/* <UsersOnline me={userObj} currentUsers={currentUsers}  /> */}
-            <Messaging ws={websocket} me={userObj} currentUsers={currentUsers} dms={dms} setDMs={setDMs}/>
-            <Chat me={userObj} ws={websocket} messages={messages} setMessages={setMessages} />
+
+            
+            <Chat 
+                me={userObj} 
+                ws={websocket} 
+                messages={messages} 
+                setMessages={setMessages} 
+            />
             
         </div>
     );

@@ -6,7 +6,6 @@ function Login({submitUserName, room, roomCreator}){
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log('Heyo')
         submitUserName(userNameInput)
     }
 
@@ -17,9 +16,9 @@ function Login({submitUserName, room, roomCreator}){
 
     return (
         <div id="login">
-            <p>commune id: {room}</p>
+            {/* <p>Commune ID: {room}</p> */}
             <form id="userNameForm" onSubmit={handleSubmit}>
-				<input type="text" id="userNameInputField" value={userNameInput} onChange={handleChange} placeholder={roomCreator? "Enter a username to create commune" : "Enter a username to join commune"} />
+				<input type="text" id="userNameInputField" value={userNameInput} onChange={handleChange} placeholder={roomCreator? "Enter username to create commune" : "Enter username to join commune"} />
 				<input type="submit" id="userNameSubmit" value="submit" />
 			</form>
         </div>

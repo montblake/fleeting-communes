@@ -1,7 +1,8 @@
 function Footer(){
     return (
         <div id="footer">
-            <p> Fleeting Communes (in development)</p>
+            <p>Fleeting Communes</p>
+            <p>Developed by Blake Montgomery</p>
         </div>
     )
 }
